@@ -12,6 +12,7 @@ class SimpleBulletPoints extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: bulletPoints
           .map<Widget>((bulletPoint) => Padding(
             padding: EdgeInsets.symmetric(vertical: context.spacing.xs),
