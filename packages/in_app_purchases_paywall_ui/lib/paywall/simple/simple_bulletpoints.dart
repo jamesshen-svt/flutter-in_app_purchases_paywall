@@ -22,7 +22,7 @@ class SimpleBulletPoints extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(context.spacing.l),
+                  padding: EdgeInsets.symmetric(horizontal: context.spacing.l),
                   child: Text(
                     bulletPoint.text,
                     style: Theme.of(context).textTheme.bodyLarge,
