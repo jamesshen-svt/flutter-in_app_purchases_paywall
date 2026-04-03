@@ -14,26 +14,23 @@ class SimpleBulletPoints extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: bulletPoints
-          .map<Widget>((bulletPoint) => Padding(
-            padding: EdgeInsets.symmetric(vertical: context.spacing.xs),
-            child: Row(
-              children: [
-                Icon(
-                  bulletPoint.icon,
-                  size: context.spacing.iconSize,
-                  color: Theme.of(context).iconTheme.color,
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: context.spacing.s),
-                    child: Text(
-                      bulletPoint.text,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
+          .map<Widget>((bulletPoint) => Row(
+            children: [
+              Icon(
+                bulletPoint.icon,
+                size: context.spacing.iconSize,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: context.spacing.s),
+                  child: Text(
+                    bulletPoint.text,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ))
           .toList(growable: false),
     );
