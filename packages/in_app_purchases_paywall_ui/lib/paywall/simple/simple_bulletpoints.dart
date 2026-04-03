@@ -20,13 +20,14 @@ class SimpleBulletPoints extends StatelessWidget {
                 size: context.spacing.iconSize,
                 color: Theme.of(context).iconTheme.color,
               ),
-              Padding(
-                child: Text(
-                  bulletPoint.text,
-                  maxLines: 2,
-                  style: Theme.of(context).textTheme.bodyLarge,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(context.spacing.l),
+                  child: Text(
+                    bulletPoint.text,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                 ),
-                padding: EdgeInsets.all(context.spacing.l),
               ),
             ],
           ))
