@@ -11,32 +11,37 @@ class SimpleBulletPoints extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: bulletPoints
-          .map<Widget>((bulletPoint) => Row(
-            children: [
-              Icon(
-                bulletPoint.icon,
-                size: context.spacing.iconSize,
-                color: Theme.of(context).iconTheme.color,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: context.spacing.s),
-                  child: Text(
-                    bulletPoint.text,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    textHeightBehavior: const TextHeightBehavior(
-                      applyHeightToFirstAscent: false,
-                      applyHeightToLastDescent: false,
-                    ),
+    final items = <Widget>[];
+    for (final bulletPoint in bulletPoints) {
+      items.add(Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4),
+        child: Row(
+          children: [
+            Icon(
+              bulletPoint.icon,
+              size: context.spacing.iconSize,
+              color: Theme.of(context).iconTheme.color,
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: context.spacing.s),
+                child: Text(
+                  bulletPoint.text,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  textHeightBehavior: const TextHeightBehavior(
+                    applyHeightToFirstAscent: false,
+                    applyHeightToLastDescent: false,
                   ),
                 ),
               ),
-            ],
-          ))
-          .toList(growable: false),
+            ),
+          ],
+        ),
+      ));
+    }
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: items,
     );
   }
 }
