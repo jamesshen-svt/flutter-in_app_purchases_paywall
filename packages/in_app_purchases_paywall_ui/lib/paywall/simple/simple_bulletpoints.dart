@@ -16,21 +16,25 @@ class SimpleBulletPoints extends StatelessWidget {
       children: bulletPoints
           .map<Widget>((bulletPoint) => Row(
             children: [
-                Icon(
-                  bulletPoint.icon,
-                  size: context.spacing.iconSize,
-                  color: Theme.of(context).iconTheme.color,
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      bulletPoint.text,
-                      style: const TextStyle(fontSize: 16, height: 1.0),
+              Icon(
+                bulletPoint.icon,
+                size: context.spacing.iconSize,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: context.spacing.s),
+                  child: Text(
+                    bulletPoint.text,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textHeightBehavior: const TextHeightBehavior(
+                      applyHeightToFirstAscent: false,
+                      applyHeightToLastDescent: false,
                     ),
                   ),
                 ),
-              ],
+              ),
+            ],
           ))
           .toList(growable: false),
     );
