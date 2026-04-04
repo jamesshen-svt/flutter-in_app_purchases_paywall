@@ -26,7 +26,11 @@ class SimpleBulletPoints extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: context.spacing.s, vertical: 0),
                   child: Text(
                     bulletPoint.text,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.2),
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textHeightBehavior: const TextHeightBehavior(
+                      applyHeightToFirstAscent: false,
+                      applyHeightToLastDescent: false,
+                    ),
                   ),
                 ),
               ),
